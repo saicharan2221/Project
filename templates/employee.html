@@ -1,0 +1,36 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block body_block %}
+
+
+<li>
+    <ul>
+        {%for i in emp%}
+       
+        <h1>Emp_id     : {{i.emp_id}} <br> </h1> 
+       <h1> First Name : {{i.first_name}} <br> </h1> 
+       <h1>Last Name   : {{i.last_name}} <br> </h1> 
+        <h1>Age        : {{i.age}} <br> </h1> 
+        <h1>Gender     : {{i.gender}} <br> </h1> 
+        <h1>Email      : {{i.email}} <br> </h1> 
+        <h1>Contact    : {{i.contact}} <br> </h1> 
+        <h1>user_id    : {{i.user_id}} <br> </h1> 
+
+
+        {%endfor%}
+    </ul>
+    <a href="{% url 'department' %}" class="nav-link"> Click to see Department Details</a>
+    <a href="{% url 'employee_details' %}" class="nav-link">Click to see Employee Details</a>
+    <a href="{% url 'designation' %}" class="nav-link">Click to see Designation Details</a>
+    <a href="{% url 'home' %}" class="nav-link">Click to go back</a>
+
+
+
+</li>
+
+
+{% endblock %}

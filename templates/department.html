@@ -1,0 +1,25 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+    
+{% endblock %}
+
+
+{% block body_block %}
+
+<li>
+    <ul>
+        {%for i in dept%}
+       
+        <h1>Dept_id     : {{i.dept_id}} <br> </h1> 
+       <h1> Department Name : {{i.dept_name}} <br> </h1> 
+
+
+        {%endfor%}
+    </ul>
+
+</li>
+<a href="{% url 'employee' %}" class="nav-link">Click to Back page</a>
+
+
+{% endblock %}

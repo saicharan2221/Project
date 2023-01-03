@@ -1,0 +1,109 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block body_block %}
+<h1> Leaves </h1>
+{%for i in lv%}
+
+{%for g in ep%}
+{% for h in e%}
+<div>
+
+    
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Emp_id</th>
+        <th scope="col">Employee Name</th>
+        <th scope="col">DOJ</th>
+        <th scope="col">Leave Bal</th>
+        <th scope="col">Leave Ernd</th>
+        <th scope="col">Leave Cnsmd</th>
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+   
+        
+        <td> {{f.user_id}} </td>
+        <td> {{h.first_name}}</td>
+        <td> {{g.date_of_joining}} </td>
+        <td>{{i.leaves_remaining}}</td>
+        <td>{{i.total_leaves}}</td>
+        <td>{{i.leaves_consumed}}</td>
+   
+
+
+      </tr>
+    </tbody>
+  </table>
+ 
+</div>
+
+
+
+  <div>
+   <h1>Leaves Taken</h1>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Leave Desc</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        {%for f in det%}
+        <td> {{f.start_date}} </td>
+        <td>{{f.end_date}}</td>
+        <td>{{f.leave_description}}</td>
+        {%endfor%}
+
+      </tr>
+     
+    </tbody>
+  </table>
+  
+</div>
+{%endfor%}
+{%endfor%}
+{%endfor%}
+
+<!-- <li>
+    <ul>
+        {%for i in lv%}
+       
+        <h1>Total Leaves     : {{i.total_leaves}} <br> </h1> 
+       <h1> Leaves consumed: {{i.leaves_consumed}} <br> </h1> 
+       <h1>Leaves Remaining  : {{i.leaves_remaining}} <br> </h1> 
+
+
+
+        {%endfor%}
+    </ul>
+    <ul>
+        {%for s in det%}
+       
+        <h1>Total Leaves     : {{s.total_leaves}} <br> </h1> 
+       <h1> Leaves consumed: {{s.leaves_consumed}} <br> </h1> 
+       <h1>Leaves Remaining  : {{s.leaves_remaining}} <br> </h1> 
+
+
+
+        {%endfor%}
+    </ul> -->
+    <a href="{% url 'leaveapplication' %}" class="nav-link"> Apply for a Leave</a>
+
+    <a href="{% url 'home' %}" class="nav-link"> Click to go back</a>
+    
+
+
+</li>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block body_block %}
+
+{% if username %}
+
+<div class="alert alert-success" role="alert">
+    
+    <h1>Welcome Mr/Ms {{username }}</h1>
+  </div>
+{% else %}
+    <h1>Welcome to Home Page</h1>
+{% endif %}
+{% endblock %}

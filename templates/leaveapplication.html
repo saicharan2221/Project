@@ -1,0 +1,104 @@
+{% extends 'dummy.html' %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block body_block %}
+<style>
+  #leave_description{
+    padding: 75px 41px;
+    
+  }
+</style>
+
+
+
+<form  method="post"> 
+  {% csrf_token %}
+    <!-- <label for="user">Enter User ID</label>
+    <input type="text" name="user" id="user"><br> -->
+
+      <!-- {{form.as_p}} -->
+    <!-- <label for="Dateofapplication"> Date of Application</label>
+    <input type="date" name="date_of_application" id="Dateofapplication"><br> -->
+
+    <label for="startdate">Start Date</label>
+    <input type="date" name="start_date" id="startdate"> <br>
+
+
+    
+    <label for="Enddate">End Date</label>
+    <input type="date" name="end_date" id="Enddate"> <br>
+    
+        
+        
+    <label for="leaves">Leave Type:</label>
+
+    <select name="leave_description" id="leaves">
+    <option value="sick">Sick</option>
+    <option value="Personal">Personal</option>
+    
+    </select> <br>
+    <label for="leave_description">Leave Description:</label> <br>
+    <textarea id="leave_description" name="leave_description" rows="2" cols="50"> 
+
+    </textarea><br>
+  
+    <input type="submit" value="Submit">
+    
+
+    {% for message in messages%}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <h1>{{message}}</h1>
+
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+    {%endfor%}
+    
+
+
+  
+
+   
+    
+
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="{% url 'leaves' %}" class="nav-link"> Click to Go back</a>
+
+
+
+
+
+{% endblock %}
